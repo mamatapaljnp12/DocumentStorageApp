@@ -12,32 +12,46 @@ export class DocumentService {
   getDocuments() {
     return documents;
   }
+
+  getDocumentById(id: number) {
+    return documents.find(x => x.id == id);
+  }
 }
 
 let documents: DocumentModel[] = [
   {
+    id: 1,
     documentName: 'Aadhaar Card',
     description: 'Aadhaar Card',
-    documentUrl: 'assets/images/documents/aadhaar.png'
+    documentUrl: 'http://localhost:4200/assets/images/documents/eAadhaar1.pdf',
+    logoUrl: 'assets/images/documents/aadhaar.png'
   },
   {
+    id: 2,
     documentName: 'Pan Card',
     description: 'Pan Card',
-    documentUrl: 'assets/images/documents/pan.png'
+    documentUrl: 'http://localhost:4200/assets/images/documents/eAadhaar1.pdf',
+    logoUrl: 'assets/images/documents/pan.png'
   },
   {
+    id: 3,
     documentName: 'Driving License',
     description: 'Driving License',
-    documentUrl: 'assets/images/documents/pan.png'
+    documentUrl: 'http://localhost:4200/assets/images/documents/eAadhaar1.pdf',
+    logoUrl: 'assets/images/documents/driving-licence.jpg'
   },
   {
+    id: 4,
     documentName: 'Voter Id',
     description: 'Voter Id',
-    documentUrl: 'assets/images/documents/pan.png'
+    documentUrl: 'http://localhost:4200/assets/images/documents/eAadhaar1.pdf',
+    logoUrl: 'assets/images/documents/voterid.png'
   },
   {
+    id: 5,
     documentName: 'B. Tech',
     description: 'Graduation',
-    documentUrl: 'assets/images/documents/pan.png'
+    documentUrl: 'http://localhost:4200/assets/images/documents/eAadhaar1.pdf',
+    logoUrl: 'assets/images/documents/degree.png'
   },
 ]

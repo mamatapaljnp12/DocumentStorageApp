@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DocumentModel } from 'src/app/models/document-model';
 import { DocumentService } from 'src/app/services/document.service';
 
@@ -11,7 +12,7 @@ export class DocumentDetailsComponent implements OnInit {
 
   documents: DocumentModel[] = [];
 
-  constructor(private dService: DocumentService) { }
+  constructor(private dService: DocumentService, private router: Router) { }
 
   ngOnInit(): void {
     this.loadDocuments();
@@ -19,6 +20,10 @@ export class DocumentDetailsComponent implements OnInit {
 
   loadDocuments() {
     this.documents = this.dService.getDocuments();
+  }
+
+  viewDetails(doc: DocumentModel) {
+    this.router.navigate(['/view-document', doc.id]);
   }
 
 }

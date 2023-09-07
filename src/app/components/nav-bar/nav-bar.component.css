@@ -1,0 +1,38 @@
+/* a:hover {
+    background-color: #aaa;
+    color: white;
+}
+
+a:active {
+    background-color: #000;
+    color: white;
+} */
+
+/* .group .active {
+    background-color: #000;
+} */
+
+li {
+    padding: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover,
+a:focus {
+    color: white;
+    text-decoration: none;
+    outline: none;
+    background-color: #aaa;
+    border-radius: 2px;
+}
+
+.active {
+    font-size: 30px;
+    color: red;
+    border-bottom: 5px solid red;
+    background-color: #aaa;
+}

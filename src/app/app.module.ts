@@ -11,6 +11,8 @@ import { AuthGuardService } from './services/auth.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CreateDocumentComponent } from './components/create-document/create-document.component';
+import { ViewDocumentComponent } from './components/view-document/view-document.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -19,11 +21,12 @@ import { CreateDocumentComponent } from './components/create-document/create-doc
     DocumentDetailsComponent,
     FooterComponent,
     NavBarComponent,
-    CreateDocumentComponent
+    CreateDocumentComponent,
+    ViewDocumentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule
+    AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule, PdfViewerModule
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]
