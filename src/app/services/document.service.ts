@@ -10,14 +10,34 @@ export class DocumentService {
   constructor(private http: HttpClient) { }
 
   getDocuments() {
-
+    return documents;
   }
 }
 
 let documents: DocumentModel[] = [
   {
-    title: '',
-    description: '',
-    documentType: 'AadhaarCard'
-  }
+    documentName: 'Aadhaar Card',
+    description: 'Aadhaar Card',
+    documentUrl: 'assets/images/documents/aadhaar.png'
+  },
+  {
+    documentName: 'Pan Card',
+    description: 'Pan Card',
+    documentUrl: 'assets/images/documents/pan.png'
+  },
+  {
+    documentName: 'Driving License',
+    description: 'Driving License',
+    documentUrl: 'assets/images/documents/pan.png'
+  },
+  {
+    documentName: 'Voter Id',
+    description: 'Voter Id',
+    documentUrl: 'assets/images/documents/pan.png'
+  },
+  {
+    documentName: 'B. Tech',
+    description: 'Graduation',
+    documentUrl: 'assets/images/documents/pan.png'
+  },
 ]

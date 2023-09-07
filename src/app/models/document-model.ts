@@ -1,5 +1,5 @@
 export interface DocumentModel {
-    title: string;
+    documentName: string;
     description: string;
-    documentType: string;
+    documentUrl: string;
 }
