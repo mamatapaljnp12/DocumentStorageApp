@@ -1,0 +1,52 @@
+<div class="container-fluid px-1 py-1 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-5 col-lg-8 col-md-9 col-11 text-center">
+            <!-- <h3>Request a Demo</h3>
+            <p class="blue-text">Just answer a few questions<br> so that we can personalize the right experience for
+                you.</p> -->
+            <div class="card">
+                <h5 class="text-center mb-4">Add New Documents</h5>
+                <form class="form-card" onsubmit="event.preventDefault()">
+                    <div class="row justify-content-between text-left mb-2">
+                        <div class="form-group col-sm-12 flex-column d-flex"> <label
+                                class="form-control-label px-3">Document Name<span class="text-danger"> *</span></label>
+                            <input type="text" id="fname" name="fname" placeholder="Enter document name"
+                                onblur="validate(1)">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left mb-2">
+                        <div class="form-group col-sm-12 flex-column d-flex"> <label class="form-control-label px-3">
+                                Description<span class="text-danger"> *</span></label> <textarea id="lname" name="lname"
+                                placeholder="Enter Description" onblur="validate(2)"></textarea> </div>
+                    </div>
+                    <!-- <div class="row justify-content-between text-left mb-2">
+                        <div class="form-group col-sm-12 flex-column d-flex">
+                            <label class="form-control-label px-3">
+                                Type of document<span class="text-danger">*</span>
+                            </label>
+                            <select class="form-select">
+                                <option selected>Tech</option>
+                                <option value="1">Comics</option>
+                                <option value="2">Story</option>
+                                <option value="3">Jokes</option>
+                            </select>
+                        </div>
+                    </div> -->
+                    <div class="row justify-content-between text-left mb-22">
+                        <div class="form-group col-sm-12 flex-column d-flex"> <label
+                                class="form-control-label px-3">Upload Document<span class="text-danger">
+                                    *</span></label>
+                            <input type="file" [(ngModel)]="file" [ngModelOptions]="{standalone: true}"
+                                class="form-control" id="customFile" accept=".pdf"
+                                (change)="showPreviewForDocument($event)" />
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="form-group col-sm-3"> <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

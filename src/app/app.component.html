@@ -1,0 +1,10 @@
+<ng-container *ngIf="isAuthenticated(); else unauthenticated">
+  <app-nav-bar></app-nav-bar>
+  <router-outlet></router-outlet>
+  <app-footer style="bottom: 0px; position: fixed; width: 100%;">
+    Copyright © 2023 Document Management System | Version V0.1
+  </app-footer>
+</ng-container>
+<ng-template #unauthenticated>
+  <app-login></app-login>
+</ng-template>
