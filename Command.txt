@@ -1,0 +1,6 @@
+npm i
+npm i ng2-pdf-viewer
+
+login:
+email: mamatapal12@gmail.com
+password: Mamata@123
