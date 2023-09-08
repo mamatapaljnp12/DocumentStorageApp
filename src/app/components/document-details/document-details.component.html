@@ -12,6 +12,12 @@
                     <p class="card-text">{{doc.description}}</p>
                     <!-- Button -->
                     <a class="btn btn-primary" (click)="viewDetails(doc)">View Details</a>
+                    <a class="btn btn-info ml-2" (click)="editDetails(doc)" style="margin-left: 8px;">
+                        <i class="fa fa-edit fa-lg"></i>
+                    </a>
+                    <a class="btn btn-danger ml-2" (click)="deleteDocument(doc)" style="margin-left: 8px;">
+                        <i class="fa fa-trash fa-lg"></i>
+                    </a>
                 </div>
             </div>
         </div>

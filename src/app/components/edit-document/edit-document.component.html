@@ -1,11 +1,14 @@
-<div class="container-fluid px-1 py-1 mx-auto">
+<div class="container px-1 py-1 mx-auto">
+    <button type="submit" class="btn btn-primary" (click)="back()">
+        <span class="fa fa-arrow-left" aria-hidden="true"></span>
+    </button>
     <div class="row d-flex justify-content-center">
         <div class="col-xl-5 col-lg-8 col-md-9 col-11 text-center">
             <!-- <h3>Request a Demo</h3>
             <p class="blue-text">Just answer a few questions<br> so that we can personalize the right experience for
                 you.</p> -->
             <div class="card">
-                <h5 class="text-center mb-4">Add New Document</h5>
+                <h5 class="text-center mb-4">Edit Document</h5>
                 <form class="form-card" onsubmit="event.preventDefault()">
                     <div class="row justify-content-between text-left mb-2">
                         <div class="form-group col-sm-12 flex-column d-flex"> <label
@@ -45,7 +48,7 @@
                     </div>
                     <div class="row justify-content-end">
                         <div class="form-group col-sm-3"> <button type="submit" class="btn btn-success"
-                                (click)="submit()">Submit</button>
+                                (click)="submit()">Update</button>
                         </div>
                     </div>
                 </form>

@@ -1,22 +1,36 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DocumentModel } from 'src/app/models/document-model';
 import { DocumentService } from 'src/app/services/document.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-create-document',
-  templateUrl: './create-document.component.html',
-  styleUrls: ['./create-document.component.css']
+  selector: 'app-edit-document',
+  templateUrl: './edit-document.component.html',
+  styleUrls: ['./edit-document.component.css']
 })
-export class CreateDocumentComponent {
+export class EditDocumentComponent {
 
   documentName: string;
   description: string;
   selectedDocument: File;
   file: File | null | undefined;
+  documentId: number;
 
-  constructor(private dService: DocumentService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private dService: DocumentService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.route.data.subscribe((data: any) => {
+      let document = Object.assign(data.routeResolver);
+      this.documentName = document.documentName;
+      this.description = document.description;
+      this.documentId = document.id;
+    })
+  }
+
+  back() {
+    this.router.navigate(['/document']);
+  }
 
   showPreviewForDocument(event: any) {
     if (event.target.files && event.target.files[0]) {
@@ -46,15 +60,16 @@ export class CreateDocumentComponent {
       Swal.fire({ icon: 'warning', text: 'Please upload a document' });
       return;
     }
-    let document: Partial<DocumentModel> = {
+    let document: DocumentModel = {
       documentName: this.documentName,
       description: this.description,
       documentUrl: 'http://localhost:4200/assets/images/documents/eAadhaar1.pdf',
-      logoUrl: 'assets/images/documents/default.jpg'
+      logoUrl: 'assets/images/documents/default.jpg',
+      id: this.documentId
     }
-    this.dService.addNewDocument(document).subscribe(
+    this.dService.updateDocument(document, this.documentId).subscribe(
       (response: any) => {
-        Swal.fire({ icon: 'success', text: 'Document added successfully' });
+        Swal.fire({ icon: 'success', text: 'Document updated successfully' });
         this.router.navigate(['/document']);
       },
       (error: any) => {
@@ -62,5 +77,4 @@ export class CreateDocumentComponent {
       }
     )
   }
-
 }

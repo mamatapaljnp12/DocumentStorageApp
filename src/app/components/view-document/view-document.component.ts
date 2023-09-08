@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DocumentModel } from 'src/app/models/document-model';
 import { DocumentService } from 'src/app/services/document.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-view-document',
@@ -15,12 +16,9 @@ export class ViewDocumentComponent implements OnInit {
   constructor(private route: ActivatedRoute, private dService: DocumentService, private router: Router) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.getDocumentById(+id)
-  }
-
-  getDocumentById(id: number) {
-    this.document = this.dService.getDocumentById(id);
+    this.route.data.subscribe((data: any) => {
+      this.document = Object.assign(data.routeResolver);
+    })
   }
 
   back() {

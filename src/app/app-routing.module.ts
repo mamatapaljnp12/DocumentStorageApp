@@ -5,6 +5,8 @@ import { DocumentDetailsComponent } from './components/document-details/document
 import { LoginComponent } from './components/login/login.component';
 import { CreateDocumentComponent } from './components/create-document/create-document.component';
 import { ViewDocumentComponent } from './components/view-document/view-document.component';
+import { EditDocumentComponent } from './components/edit-document/edit-document.component';
+import { DocumentResolver } from './services/document.resolver';
 
 const routes: Routes = [
   {
@@ -20,10 +22,21 @@ const routes: Routes = [
   {
     path: 'view-document/:id',
     component: ViewDocumentComponent,
-    canActivate: [AuthGuardService]
+    canActivate: [AuthGuardService],
+    resolve: {
+      routeResolver: DocumentResolver
+    }
   },
   {
-    path: 'create-document',
+    path: 'edit-document/:id',
+    component: EditDocumentComponent,
+    canActivate: [AuthGuardService],
+    resolve: {
+      routeResolver: DocumentResolver
+    }
+  },
+  {
+    path: 'new-document',
     component: CreateDocumentComponent,
     canActivate: [AuthGuardService]
   },

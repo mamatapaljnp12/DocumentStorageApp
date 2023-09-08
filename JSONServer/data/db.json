@@ -1,0 +1,46 @@
+{
+  "documents": [
+    {
+      "id": 1,
+      "documentName": "Aadhaar Card",
+      "description": "Aadhaar Card",
+      "documentUrl": "http://localhost:4200/assets/images/documents/eAadhaar1.pdf",
+      "logoUrl": "assets/images/documents/aadhaar.png"
+    },
+    {
+      "id": 2,
+      "documentName": "Pan Card",
+      "description": "Pan Card",
+      "documentUrl": "http://localhost:4200/assets/images/documents/eAadhaar1.pdf",
+      "logoUrl": "assets/images/documents/pan.png"
+    },
+    {
+      "id": 3,
+      "documentName": "Driving License",
+      "description": "Driving License",
+      "documentUrl": "http://localhost:4200/assets/images/documents/eAadhaar1.pdf",
+      "logoUrl": "assets/images/documents/driving-licence.jpg"
+    },
+    {
+      "id": 4,
+      "documentName": "Voter Id",
+      "description": "Voter Id",
+      "documentUrl": "http://localhost:4200/assets/images/documents/eAadhaar1.pdf",
+      "logoUrl": "assets/images/documents/voterid.png"
+    },
+    {
+      "id": 5,
+      "documentName": "B. Tech",
+      "description": "Graduation",
+      "documentUrl": "http://localhost:4200/assets/images/documents/eAadhaar1.pdf",
+      "logoUrl": "assets/images/documents/degree.png"
+    },
+    {
+      "documentName": "M. Tech",
+      "description": "Post Graduation",
+      "documentUrl": "http://localhost:4200/assets/images/documents/eAadhaar1.pdf",
+      "logoUrl": "assets/images/documents/default.jpg",
+      "id": 6
+    }
+  ]
+}

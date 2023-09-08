@@ -13,6 +13,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CreateDocumentComponent } from './components/create-document/create-document.component';
 import { ViewDocumentComponent } from './components/view-document/view-document.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { EditDocumentComponent } from './components/edit-document/edit-document.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     FooterComponent,
     NavBarComponent,
     CreateDocumentComponent,
-    ViewDocumentComponent
+    ViewDocumentComponent,
+    EditDocumentComponent
   ],
   imports: [
     BrowserModule,
