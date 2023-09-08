@@ -20,6 +20,14 @@ export class CreateDocumentComponent {
 
   showPreviewForDocument(event: any) {
     if (event.target.files && event.target.files[0]) {
+      let size = event.target.files[0].size /1024/1024 ;
+      // Maximum 1 MB file allowed
+      if(size > 1){
+        Swal.fire({ title: 'Error', text: 'Maximum size should be 1 MB.', icon: 'error', heightAuto: false });
+        this.file = null;
+        this.file = undefined;
+        return;
+      }
       let mimeType = event.target.files[0].type;
       switch (mimeType) {
         case 'application/pdf':
